@@ -1,8 +1,9 @@
 var connection = require("./connection");
 
 var orm = {
-    selectAll: function() {
-
+    selectAll: function(table) {
+      var queryString = `SELECT * FROM ??`;
+      connection.query(queryString, [table])
     },
     insertOne: function() {
 
