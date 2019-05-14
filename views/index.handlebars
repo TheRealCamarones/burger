@@ -1,14 +1,41 @@
-<h1>Burgers!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="../public/assets/img/burger.jpg" alt="burger image">
+            <h1>Welcome to Matt's Bar!</h1>
+            <h2>Have a Jucy Lucy!</h2>
+        </div>
+    </div>
 
-<h2>Have a Jucy Lucy!</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Burgers on Menu</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+                    <li>
+                        {{this.id}}
+                        {{this.burger_name}}
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+                        <button class="change-eaten" data-id="{{id}}" data-="{{devoured}}">
+                            {{#if devoured}}YUM YUM!{{else}}ALL GONE!{{/if}}
+                        </button>
+                    </li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 
 <h2>Jucy Lucy's Already Eaten</h2>
 
@@ -36,3 +63,4 @@
 
   <button type="submit">Add Burger</button>
 </form>
+</div>
