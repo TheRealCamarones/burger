@@ -27,22 +27,13 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
 <h2>Jucy Lucy's Already Eaten</h2>
 
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
+      {{this.id}}
+      {{this.burger_name}}
     {{/if}}
   {{/each}}
 </ul>
@@ -57,8 +48,8 @@
 
   <div class="form-group">
     <label for="devoured">Devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Devoured!<br>
-    <input type="radio" name="devoured" value="0"> Uneaten
+    <input type="radio" name="devoured" value="0" checked> Uneaten<br>
+    <input type="radio" name="devoured" value="1"> Devoured!
   </div>
 
   <button type="submit">Add Burger</button>
