@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <img src="../public/assets/img/burger.jpg" alt="burger image">
+            <img src="assets/img/burger.jpg" alt="burger image">
             <h1>Welcome to Matt's Bar!</h1>
             <h2>Have a Jucy Lucy!</h2>
         </div>
@@ -17,7 +17,7 @@
                         {{this.id}}
                         {{this.burger_name}}
 
-                        <button class="change-eaten" data-id="{{id}}" data-="{{devoured}}">
+                        <button class="change-eaten" data-id="{{id}}" data-devoured="{{devoured}}">
                             {{#if devoured}}YUM YUM!{{else}}ALL GONE!{{/if}}
                         </button>
                     </li>
@@ -31,7 +31,7 @@
 
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
+    {{#if this.devoured}}
       {{this.id}}
       {{this.burger_name}}
     {{/if}}

@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
           burgers: data
       };
       console.log(burgerObject);
-      res.render('index');
+      res.render('index', burgerObject);
   });
 });
 
@@ -28,13 +28,13 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
-router.put("/api/cats/:id", function(req, res) {
+router.post("/api/burgers/:id", function(req, res) {
     var status = "id = " + req.params.id;
 
     console.log("status", status);
 
-    burger.update({
-        devoured: req.body.devoured
+    burger.updateOne({
+        devoured: true
     }, status, function(result) {
         // if nothing was changed this will return an error
         if (result.changedRows == 0) {
