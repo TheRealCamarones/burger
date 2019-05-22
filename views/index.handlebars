@@ -6,9 +6,8 @@
             <h2>Have a Jucy Lucy!</h2>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-6 col-xl-6">
             <h2>Burgers on Menu</h2>
             <ul>
                 {{#each burgers}}
@@ -25,18 +24,23 @@
                 {{/each}}
             </ul>
         </div>
-    </div>
+    
 
-<h2>Jucy Lucy's Already Eaten</h2>
+  <div class="col-md-6 col-xl-6">
+    <h2>Jucy Lucy's Already Eaten</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      {{this.id}}
-      {{this.burger_name}}
-    {{/if}}
-  {{/each}}
-</ul>
+    <ul>
+      {{#each burgers}}
+        {{#if this.devoured}}
+        <li>
+          {{this.id}}
+          {{this.burger_name}}
+        </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
 
 <h2>Add a New Jucy Lucy to Eat!</h2>
 <form class="create-form">

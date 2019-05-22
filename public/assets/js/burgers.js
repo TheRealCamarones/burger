@@ -1,5 +1,6 @@
 $(function() {
     $(".change-eaten").on("click", function(event) {
+        event.preventDefault();
         var id = $(this).data("id");
         var newEaten = $(this).data("newEaten");
 
@@ -9,7 +10,7 @@ $(function() {
 
         // then use the API to send the updated devoured state
         $.ajax("/api/burgers/" + id, {
-            type: "PUT",
+            type: "POST",
             data: newEatenState
         }).then(
             function() {
