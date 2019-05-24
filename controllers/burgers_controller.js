@@ -20,28 +20,22 @@ router.post("/api/burgers", function(req, res) {
         "burger_name", "devoured"
     ], [
         req.body.burger_name, req.body.devoured
-    ], function(result) {
+    ], function() {
         // return id of new burger
-        res.json({
-            id: result.insertId
-        });
+        res.redirect("/");
     });
 });
 
 router.post("/api/burgers/:id", function(req, res) {
-    var status = "id = " + req.params.id;
+    var condition = "id = " + req.params.id;
 
-    console.log("status", status);
+    console.log("condition", condition);
 
     burger.updateOne({
         devoured: true
-    }, status, function(result) {
+    }, condition, function() {
         // if nothing was changed this will return an error
-        if (result.changedRows == 0) {
-            return res.status(404).end();
-        } else {
-            res.redirect("/");
-        }
+        res.redirect("/")
     });
 });
 

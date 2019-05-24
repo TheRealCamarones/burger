@@ -1,8 +1,7 @@
 $(function() {
     $(".change-eaten").on("click", function(event) {
-        event.preventDefault();
         var id = $(this).data("id");
-        var newEaten = $(this).data("newEaten");
+        var newEaten = $(this).data("devoured");
 
         var newEatenState = {
             devoured: newEaten
@@ -16,9 +15,10 @@ $(function() {
             function() {
                 console.log("changed eaten to", newEaten);
                 // reload the page to update the list
-                location.reload();
+                window.location.reload();
             }
         );
+        
     });
 
     $(".create-form").on("submit", function(event) {
