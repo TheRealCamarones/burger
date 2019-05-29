@@ -1,9 +1,8 @@
-<div class="jumbotron">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
+      <h1>Welcome to Matt's Bar! Home of the Original Jucy Lucy</h1>
       <img src="assets/img/burger.jpg" alt="burger image">
-      <h1>Welcome to Matt's Bar!</h1>
-      <h2>Have a Jucy Lucy!</h2>
     </div>
   </div>
   <div class="row">
@@ -17,7 +16,7 @@
           {{this.burger_name}}
 
           <button class="change-eaten" data-id="{{id}}" data-devoured="{{devoured}}">
-            {{#if devoured}}YUM YUM!{{else}}ALL GONE!{{/if}}
+            {{#if devoured}}YUM YUM!{{else}}EAT UP!{{/if}}
           </button>
         </li>
         {{/unless}}
