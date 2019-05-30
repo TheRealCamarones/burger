@@ -13,6 +13,7 @@ var burger = {
     },
     updateOne: function(objColVals, condition, cb) {
         orm.updateOne("burgers", objColVals, condition, function(res) {
+          console.log("working in model")
             cb(res);
         })
     }

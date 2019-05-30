@@ -66,14 +66,15 @@ var orm = {
       queryString += condition;
 
       console.log(queryString);
-      connection.query(queryString), function(err, result) {
+      connection.query(queryString, function(err, result) {
           if (err) {
-              throw err;
+              
+              console.log(err);
           }
-
+          console.log("line 73")
           cb(result);
-      }
-        }
+        })
+    }
 };
 
 module.exports = orm;

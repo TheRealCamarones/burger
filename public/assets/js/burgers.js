@@ -1,21 +1,23 @@
 $(function() {
     $(".change-eaten").on("click", function(event) {
+        console.log("responding")
         var id = $(this).data("id");
         var newEaten = $(this).data("devoured");
 
         var newEatenState = {
             devoured: newEaten
         };
-
+console.log(id)
         // then use the API to send the updated devoured state
         $.ajax("/api/burgers/" + id, {
-            type: "POST",
+            type: "PUT",
             data: newEatenState
         }).then(
-            function() {
+            function(response) {
+                console.log(response)
                 console.log("changed eaten to", newEaten);
                 // reload the page to update the list
-                window.location.reload();
+                location.reload();
             }
         );
         
