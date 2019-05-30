@@ -16,7 +16,7 @@
           {{this.burger_name}}
 
           <button class="change-eaten" data-id="{{id}}" data-devoured="{{devoured}}">
-            {{#if devoured}}YUM YUM!{{else}}EAT UP!{{/if}}
+            {{#unless devoured}}EAT UP!{{/unless}}
           </button>
         </li>
         {{/unless}}
