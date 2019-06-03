@@ -1,0 +1,17 @@
+h1 {
+    color: #900707;
+    font-family: "Bookman", "Helvetica", "sans-serif"
+}
+
+h2, li, label, .form-group {
+    color: #fff
+}
+
+.container {
+    background-color: #900707
+}
+
+.jumbotron {
+    background-color: #fff
+}
+
